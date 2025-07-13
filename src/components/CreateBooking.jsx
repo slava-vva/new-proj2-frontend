@@ -1,16 +1,12 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 import api from "../api";
-import { green } from "@mui/material/colors";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -22,18 +18,15 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 export default function CustomizedDialogs({ onRecordCreated }) {
-
   
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
-
-  
-
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -49,8 +42,8 @@ export default function CustomizedDialogs({ onRecordCreated }) {
       })
       .catch((err) => alert(err));
       
-      onRecordCreated();
       setOpen(false);
+      onRecordCreated();
   };
 
   return (

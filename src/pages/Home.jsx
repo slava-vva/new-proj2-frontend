@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../api";
-import Note from "../components/Note"
+//import Note from "../components/Note"
 import "../styles/Home.css"
 
 import Table from '@mui/material/Table';
@@ -17,7 +17,9 @@ function Home() {
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
 
-    const today = "06-06-2025";
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
 
     useEffect(() => {
         getNotes();
@@ -83,7 +85,7 @@ function Home() {
                       {note.title}
                     </TableCell>
                     <TableCell align="right">{note.content}</TableCell>
-                    <TableCell align="right">{today}</TableCell>
+                    <TableCell align="right">{tomorrow.toLocaleString()}</TableCell>
                     <TableCell align="right">
                       <button className="delete-button" onClick={() => deleteNote(note.id)}>
                         Delete

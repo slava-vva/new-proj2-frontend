@@ -4,8 +4,31 @@
   background-color: rgba(0, 35, 0, 0.5); /* white transparent overlay */
   z-index: 1;
 }
-.div-forecolor {
+
+.div-forecolor > div > h1,h2 {
   color: white;
+}
+
+.div-modal{
+    color: black;
+}
+
+
+.div-about {
+  color: white;
+}
+
+.div-bg-table{
+  padding: 1.25rem;
+  
+}
+
+.btn-bg {
+  background-color: #f0ffff;
+}
+
+label{
+  color: black;
 }
 
 body {

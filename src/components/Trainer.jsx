@@ -1,19 +1,25 @@
 import React from "react";
-import "../styles/Note.css"
+import "./TrainerCard.css";
 
-function Trainer({ trainer, onDelete }) {
-    const formattedDate = new Date(trainer.created_at).toLocaleDateString("en-US")
+function Trainers({ trainer, onDelete }) {
+  const formattedDate = new Date(trainer.created_at).toLocaleDateString("en-US");
 
-    return (
-        <div className="note-container">
-            <p className="note-title">{trainer.first_name}</p>
-            <p className="note-content">{trainer.last_name}</p>
-            <p className="note-date">{formattedDate}</p>
-            <button className="delete-button" onClick={() => onDelete(trainer.id)}>
-                Delete
-            </button>
-        </div>
-    );
+  return (
+    <div className="trainer-card">
+      <img
+        src="https://placehold.co/200" // Replace with trainer.photo if available
+        //src="https://icons-for-free.com/iff/png/256/boy+man+person+user+woman+icon-1320085967769585303.png"
+        alt={`${trainer.first_name} ${trainer.last_name}`}
+        className="trainer-photo"
+      />
+      <div className="trainer-details">
+        <h3>{trainer.first_name} {trainer.last_name}</h3>
+        <p>Joined: {formattedDate}</p>
+        <button className="edit-button" >Edit</button>
+        <button className="delete-button" onClick={() => onDelete(trainer.id)}>Delete</button>
+      </div>
+    </div>
+  );
 }
 
-export default Trainer
+export default Trainers;

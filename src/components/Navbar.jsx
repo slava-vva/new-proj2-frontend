@@ -36,7 +36,9 @@ const Navbar = () => {
             <MenuItem component={Link} to="/trainers" onClick={handleCloseSettings}>
               Trainers
             </MenuItem>
-            {/* Add more menu items here if needed */}
+            <MenuItem component={Link} to="/golflocations" onClick={handleCloseSettings}>
+              Golf Locations
+            </MenuItem>
           </Menu>
 
           <Button color="inherit" href="/about">About</Button>

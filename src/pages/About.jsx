@@ -1,16 +1,16 @@
 import INFO from '../data/user'
 
+
 const About = () => (
   
-    <div className='div-bg-table'>
-      <div className='div-bg div-bg-table div-forecolor'>
-        <h1>About Page</h1>
+    <div className='div-bg-table div-about'>
+      <div className='div-bg div-bg-table'>
+        <h1>{INFO.about.title}</h1>
         <h2>
-          Golf course App developed as part of assignment for course CI/CD
+          {INFO.about.description}
         </h2>
         <h2>
-          according to corriculum PGDIT Software development in Auckland
-          Institute of Studies
+          {INFO.about.description_2}
         </h2>
         <h3>Name: {INFO.main.name}</h3>
         <h4>Studend ID: {INFO.main.studentid}</h4>

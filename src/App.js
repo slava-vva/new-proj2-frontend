@@ -5,10 +5,12 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Trainers from "./pages/Trainers";
+import Bookings from "./pages/Bookings";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
+import GolfLocations from "./pages/GolfLocations";
 
 function Logout() {
   localStorage.clear();
@@ -31,11 +33,14 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <Home />
+                <Bookings />
               </ProtectedRoute>
             }
           />
+          <Route path="/bookings" element={<Bookings />} />
+
           <Route path="/trainers" element={<Trainers />} />
+          <Route path="/golflocations" element={<GolfLocations />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
